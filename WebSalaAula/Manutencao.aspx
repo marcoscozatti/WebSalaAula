@@ -24,6 +24,7 @@
 		.auto-style5 {
 			width: 494px;
 		}
+
 		.auto-style6 {
 			text-align: center;
 		}
@@ -83,12 +84,41 @@
 
 						<tr>
 							<td class="auto-style6" colspan="2">
-								&nbsp;</td>
+								
+								<asp:GridView ID="MinhaConexao" runat="server" AllowSorting="True" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="conexao" ForeColor="#333333" GridLines="None">
+									<AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+									<Columns>
+										<asp:CommandField ShowSelectButton="True" ShowDeleteButton="True" ShowEditButton="True" />
+										<asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+										<asp:BoundField DataField="professor" HeaderText="professor" SortExpression="professor" />
+										<asp:BoundField DataField="sala" HeaderText="sala" SortExpression="sala" />
+									</Columns>
+									<EditRowStyle BackColor="#999999" />
+									<FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+									<HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+									<PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+									<RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+									<SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+									<SortedAscendingCellStyle BackColor="#E9E7E2" />
+									<SortedAscendingHeaderStyle BackColor="#506C8C" />
+									<SortedDescendingCellStyle BackColor="#FFFDF8" />
+									<SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+								</asp:GridView>
+								
+							<asp:SqlDataSource ID="conexao" runat="server"
+								  connectionString="<%$ ConnectionStrings:DBSalaAulaConnectionString %>"
+							      SelectCommand="SELECT [id], [professor], [sala] FROM [ManutSalas]"
+							 	  UpdateCommand="UPDATE ManutSalas SET [professor]=@professor, [sala]=@sala Where [id]=@id"
+								  DeleteCommand="Delete From ManutSalas Where [id]=@id">
+							</asp:SqlDataSource>
+									
+							</td>
 						</tr>
 
 
 					</table>
 					<asp:HyperLink ID="Home" runat="server" Text="Home" Visible="True" NavigateUrl="~/Default.aspx">Volta Home</asp:HyperLink>
+					
 
 				</div>
 			</div>

@@ -28,6 +28,7 @@ namespace WebSalaAula
 				tb.SaveChanges();
 
 				MessageBox.Show("Incluido com sucesso", "Inclusão");
+				limpacampos(); 
 
 			}
 		}
@@ -44,6 +45,7 @@ namespace WebSalaAula
 					tb.Entry(objeto).State = EntityState.Modified;
 					tb.SaveChanges();
 					MessageBox.Show("Alteração realizada com sucesso", "Alteração");
+					limpacampos();
 
 				}
 				catch (Exception ex)
@@ -66,6 +68,7 @@ namespace WebSalaAula
 					tb.ManutSala.Remove(objeto);
 					tb.SaveChanges();
 					MessageBox.Show("Exlcuido com sucesso", "Exclusão");
+					limpacampos();
 				}
 				catch (Exception ex)
 				{
@@ -76,5 +79,22 @@ namespace WebSalaAula
 			}
 
 		}
+
+		public void limpacampos()
+		{
+			txtID.Text = "";
+			txtProfessor.Text = "";
+			txtSala.Text = "";
+			txtProfessor.Focus();
+		}
+
+
+
+
+
+
 	}
+
+
+
 }

@@ -96,6 +96,24 @@ namespace WebSalaAula
 		protected global::System.Web.UI.WebControls.Button btnExcluir;
 
 		/// <summary>
+		/// Controle MinhaConexao.
+		/// </summary>
+		/// <remarks>
+		/// Campo gerado automaticamente.
+		/// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.GridView MinhaConexao;
+
+		/// <summary>
+		/// Controle conexao.
+		/// </summary>
+		/// <remarks>
+		/// Campo gerado automaticamente.
+		/// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.SqlDataSource conexao;
+
+		/// <summary>
 		/// Controle Home.
 		/// </summary>
 		/// <remarks>
